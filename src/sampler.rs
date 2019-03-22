@@ -120,7 +120,7 @@ impl<'p> SamplerBuilder<'p> {
 
         // Get event code
         let mut code: c_int = 0;
-        check(unsafe { ffi::PAPI_event_name_to_code(c_name.as_ptr(), &mut code) })?;
+        check(unsafe { ffi::PAPI_event_name_to_code(c_name.as_ptr_mut(), &mut code) })?;
 
 		// Check if event is available
         check(unsafe { ffi::PAPI_query_event(code) })?;
