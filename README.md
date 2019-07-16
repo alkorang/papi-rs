@@ -26,6 +26,17 @@ counters. Visit the [PAPI website](http://icl.utk.edu/papi) for more information
 
 Note that this crate does not provide a high-level interface to PAPI.
 
+## Environment Variables
+
+There are two environment variables to specify custom PAPI library dependency:
+- `PAPI_LIBRARY`: used for `-L` option
+- `PAPI_INCLUDE_DIR`: used for `-I` option
+
+Let's assume you installed PAPI in `/opt/papi/5.7.0/`, then you will run,
+```bash
+$ PAPI_LIBRARY=/opt/papi/5.7.0/lib/ PAPI_INCLUDE_DIR=/opt/papi/5.7.0/include/ cargo build
+```
+
 ## Versions
 
 This library targets the current Rust stable release,
